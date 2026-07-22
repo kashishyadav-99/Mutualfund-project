@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | AuraWealth</title>
+  <meta name="description" content="AuraWealth Admin Portal">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --accent-emerald: #7c3aed; /* Purple admin theme */
+      --accent-gold: #fbbf24;
+    }
+
+    body {
+      background-color: var(--navy);
+      color: var(--text-white);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation */
+    .admin-navbar {
+      background: rgba(10,22,40,0.9);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .admin-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .admin-logo span {
+      color: var(--accent-emerald);
+    }
+
+    .admin-logo-icon {
+      background: linear-gradient(135deg, var(--accent-emerald), #5b21b6);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .admin-profile {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .logout-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-white);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      transition: all 0.2s;
+    }
+
+    .logout-btn:hover {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+    }
+
+    /* Main Content */
+    .admin-main {
+      padding: 2.5rem;
+      flex: 1;
+    }
+
+    .page-header {
+      margin-bottom: 2rem;
+    }
+
+    .page-header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .page-header p {
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Dashboard Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(145deg, rgba(26,48,85,0.6) 0%, rgba(16,32,64,0.6) 100%);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(124,58,237,0.1);
+      color: var(--accent-emerald);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stat-info h3 {
+      font-size: 1.75rem;
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .stat-info p {
+      color: var(--text-secondary);
+      margin: 0;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* User Table Container */
+    .table-container {
+      background: rgba(26,48,85,0.5);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+
+    .table-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.2);
+    }
+
+    .table-header h2 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* The Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th {
+      background: rgba(255,255,255,0.02);
+      padding: 1rem 1.5rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    td {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255,255,255,0.02);
+      color: var(--text-white);
+    }
+
+    .user-name-cell {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-emerald), #5b21b6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    .user-name {
+      font-weight: 500;
+      color: var(--text-white);
+    }
+
+    .action-btns {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-call {
+      background: rgba(16,185,129,0.1);
+      color: #10b981;
+      border: 1px solid rgba(16,185,129,0.2);
+    }
+    .btn-call:hover {
+      background: rgba(16,185,129,0.2);
+    }
+
+    .btn-email {
+      background: rgba(59,130,246,0.1);
+      color: #3b82f6;
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+    .btn-email:hover {
+      background: rgba(59,130,246,0.2);
+    }
+
+    .empty-state {
+      padding: 3rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+    
+    .loading-state {
+      padding: 3rem;
+      text-align: center;
+      color: var(--accent-emerald);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .admin-main { padding: 1.5rem; }
+      .table-container { overflow-x: auto; }
+      table { min-width: 800px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="admin-navbar">
+    <a href="#" class="admin-logo">
+      <div class="admin-logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      Aura<span>Admin</span>
+    </a>
+    
+    <div class="nav-actions">
+      <div class="admin-profile" id="admin-profile-name">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        Admin User
+      </div>
+      <button class="logout-btn" id="btn-logout">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Main Dashboard -->
+  <main class="admin-main">
+    <div class="page-header">
+      <h1>Dashboard Overview</h1>
+      <p>Manage users, view contact info, and monitor platform growth.</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <h3 id="stat-total-users">-</h3>
+          <p>Total Users</p>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        </div>
+        <div class="stat-info">
+          <h3>Active</h3>
+          <p>System Status</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Users Table -->
+    <div class="table-container">
+      <div class="table-header">
+        <h2>Registered Users</h2>
+      </div>
+      
+      <div style="overflow-x: auto;">
+        <table id="users-table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Email Address</th>
+              <th>Mobile Number</th>
+              <th>Joined Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="users-table-body">
+            <tr>
+              <td colspan="5" class="loading-state">Loading user data...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Authentication Check
+    document.addEventListener('DOMContentLoaded', () => {
+      const adminToken = localStorage.getItem('adminToken');
+      if (!adminToken) {
+        window.location.href = 'admin-login.html';
+        return;
+      }
+      
+      const adminUser = JSON.parse(localStorage.getItem('adminUser') || '{}');
+      if (adminUser.username) {
+        document.getElementById('admin-profile-name').innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          ${adminUser.username}
+        `;
+      }
+      
+      fetchUsers();
+    });
+
+    // Logout
+    document.getElementById('btn-logout').addEventListener('click', () => {
+      localStorage.removeItem('adminToken');
+      localStorage.removeItem('adminUser');
+      window.location.href = 'admin-login.html';
+    });
+
+    // Fetch and display users
+    async function fetchUsers() {
+      try {
+        const response = await fetch('http://localhost:3000/api/users');
+        if (!response.ok) throw new Error('Failed to fetch users');
+        
+        const users = await response.json();
+        
+        // Update stats
+        document.getElementById('stat-total-users').innerText = users.length;
+        
+        const tbody = document.getElementById('users-table-body');
+        tbody.innerHTML = '';
+        
+        if (users.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="5" class="empty-state">No users found.</td></tr>`;
+          return;
+        }
+
+        users.forEach(user => {
+          const joinedDate = new Date(user.createdAt).toLocaleDateString('en-IN', {
+            year: 'numeric', month: 'short', day: 'numeric'
+          });
+          
+          const initial = user.firstName ? user.firstName.charAt(0).toUpperCase() : '?';
+          const fullName = `${user.firstName || ''} ${user.lastName || ''}`.trim();
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>
+              <div class="user-name-cell">
+                <div class="user-avatar">${initial}</div>
+                <div class="user-name">${fullName}</div>
+              </div>
+            </td>
+            <td>${user.email || 'N/A'}</td>
+            <td>${user.mobile || 'N/A'}</td>
+            <td>${joinedDate}</td>
+            <td>
+              <div class="action-btns">
+                ${user.mobile ? `<a href="tel:${user.mobile}" class="btn-action btn-call">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  Call
+                </a>` : ''}
+                ${user.email ? `<a href="mailto:${user.email}" class="btn-action btn-email">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  Email
+                </a>` : ''}
+              </div>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+      } catch (err) {
+        console.error(err);
+        document.getElementById('users-table-body').innerHTML = `
+          <tr><td colspan="5" class="empty-state" style="color: #ef4444;">Error loading user data. Please ensure the server is running.</td></tr>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>

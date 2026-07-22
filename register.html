@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | AuraWealth — Start Investing Today</title>
+  <meta name="description" content="Open your free AuraWealth investment account in 2 minutes. Zero commission, direct mutual funds, automated SIPs. Start with ₹500.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Auth Page Specific Styles ── */
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: radial-gradient(ellipse at 70% 0%, rgba(16,185,129,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 100%, rgba(251,191,36,0.05) 0%, transparent 55%),
+                  var(--navy);
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .auth-circle-bg {
+      position: fixed;
+      top: -120px;
+      right: -160px;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(16,185,129,0.10);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .auth-circle-bg::before {
+      content: '';
+      position: absolute;
+      inset: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(16,185,129,0.07);
+    }
+    .auth-circle-bg::after {
+      content: '';
+      position: absolute;
+      inset: 100px;
+      border-radius: 50%;
+      border: 1px solid rgba(16,185,129,0.05);
+      background: radial-gradient(circle, rgba(16,185,129,0.04) 0%, transparent 70%);
+    }
+
+    .auth-lines-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .auth-lines-bg svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .auth-header {
+      position: relative;
+      z-index: 10;
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .auth-main {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 2.5rem 1.5rem 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .auth-card {
+      background: linear-gradient(145deg, rgba(26,48,85,0.95) 0%, rgba(16,32,64,0.92) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 2.75rem 3.5rem;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 32px 64px -12px rgba(0,0,0,0.6), 0 0 0 1px rgba(16,185,129,0.05);
+      backdrop-filter: blur(20px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .auth-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-emerald), var(--accent-gold), var(--accent-emerald));
+      background-size: 200% 100%;
+      animation: shimmerGradient 4s infinite linear;
+    }
+
+    @keyframes shimmerGradient {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 200% 0%; }
+    }
+
+    .auth-card-top {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .auth-logo-mark {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--accent-emerald), #059669);
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 8px 24px rgba(16,185,129,0.3);
+      color: var(--navy);
+    }
+
+    .auth-card-top h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.375rem;
+    }
+
+    .auth-card-top p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Steps progress indicator */
+    .step-progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 2rem;
+    }
+
+    .step-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      font-family: 'Outfit', sans-serif;
+      transition: all 0.3s;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step-dot.active {
+      border-color: var(--accent-emerald);
+      background: rgba(16,185,129,0.15);
+      color: var(--accent-emerald);
+    }
+
+    .step-dot.done {
+      border-color: var(--accent-emerald);
+      background: var(--accent-emerald);
+      color: var(--navy);
+    }
+
+    .step-line {
+      flex: 1;
+      height: 2px;
+      background: rgba(255,255,255,0.07);
+      max-width: 60px;
+    }
+
+    .step-line.done {
+      background: var(--accent-emerald);
+    }
+
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-input-wrapper {
+      position: relative;
+    }
+
+    .form-input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      transition: color 0.2s;
+    }
+
+    .form-input {
+      width: 100%;
+      background: rgba(10,22,40,0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 0.875rem 1rem 0.875rem 2.75rem;
+      color: var(--text-white);
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      outline: none;
+    }
+
+    .form-input.no-icon {
+      padding-left: 1rem;
+    }
+
+    .form-input::placeholder { color: var(--text-muted); }
+
+    .form-input:focus {
+      border-color: rgba(16,185,129,0.4);
+      background: rgba(16,185,129,0.04);
+      box-shadow: 0 0 0 3px rgba(16,185,129,0.08);
+    }
+
+    .form-input-wrapper:focus-within .form-input-icon {
+      color: var(--accent-emerald);
+    }
+
+    .form-hint {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.125rem;
+    }
+
+    /* Password strength bar */
+    .password-strength {
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.07);
+      margin-top: 0.5rem;
+      overflow: hidden;
+    }
+
+    .password-strength-bar {
+      height: 100%;
+      border-radius: 2px;
+      width: 0;
+      transition: width 0.3s, background 0.3s;
+    }
+
+    .strength-text {
+      font-size: 0.7rem;
+      margin-top: 0.25rem;
+      color: var(--text-muted);
+    }
+
+    /* Terms checkbox */
+    .terms-agree {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .terms-agree input[type="checkbox"] {
+      accent-color: var(--accent-emerald);
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .auth-link {
+      color: var(--accent-emerald);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .auth-link:hover { opacity: 0.75; }
+
+    .btn-auth {
+      background: linear-gradient(135deg, var(--accent-emerald), #059669);
+      color: var(--navy);
+      border: none;
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 14px rgba(16,185,129,0.3);
+      margin-top: 0.25rem;
+    }
+    .btn-auth:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(16,185,129,0.45);
+    }
+
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--text-muted);
+      font-size: 0.8125rem;
+    }
+    .auth-divider::before, .auth-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+    }
+
+    .social-auth-btns {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn-social {
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 0.75rem;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-social:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+      color: var(--text-white);
+      transform: translateY(-1px);
+    }
+
+    /* Benefits strip */
+    .register-benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      background: rgba(16,185,129,0.04);
+      border: 1px solid rgba(16,185,129,0.1);
+      border-radius: 12px;
+    }
+
+    .reg-benefit {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .reg-benefit svg {
+      color: var(--accent-emerald);
+      flex-shrink: 0;
+    }
+
+    .auth-footer-text {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.2s;
+    }
+    .password-toggle:hover { color: var(--text-secondary); }
+
+    @media (max-width: 600px) {
+      .auth-card {
+        padding: 2rem 1.25rem;
+        border-radius: 20px;
+      }
+      .form-row { grid-template-columns: 1fr; }
+      .register-benefits { grid-template-columns: 1fr; }
+      .social-auth-btns { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body class="auth-page">
+
+  <!-- Decorative Backgrounds -->
+  <div class="auth-circle-bg"></div>
+  <div class="auth-lines-bg">
+    <svg viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="200" x2="500" y2="900" stroke="rgba(16,185,129,0.04)" stroke-width="1"/>
+      <line x1="100" y1="0" x2="700" y2="900" stroke="rgba(16,185,129,0.03)" stroke-width="1"/>
+      <line x1="300" y1="0" x2="900" y2="900" stroke="rgba(16,185,129,0.025)" stroke-width="1"/>
+      <line x1="600" y1="0" x2="1440" y2="800" stroke="rgba(16,185,129,0.03)" stroke-width="1"/>
+      <line x1="900" y1="0" x2="1440" y2="400" stroke="rgba(16,185,129,0.02)" stroke-width="1"/>
+      <line x1="0" y1="150" x2="1440" y2="150" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+      <line x1="0" y1="450" x2="1440" y2="450" stroke="rgba(255,255,255,0.015)" stroke-width="1"/>
+      <line x1="0" y1="750" x2="1440" y2="750" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+      <circle cx="200" cy="100" r="1.5" fill="rgba(16,185,129,0.15)"/>
+      <circle cx="400" cy="300" r="1" fill="rgba(16,185,129,0.1)"/>
+      <circle cx="1200" cy="200" r="1.5" fill="rgba(16,185,129,0.12)"/>
+      <circle cx="1000" cy="600" r="1" fill="rgba(16,185,129,0.1)"/>
+      <circle cx="150" cy="700" r="1" fill="rgba(16,185,129,0.08)"/>
+    </svg>
+  </div>
+
+  <!-- Header -->
+  <header class="auth-header">
+    <a href="index.html" class="logo" id="reg-logo">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      Aura<span>Wealth</span>
+    </a>
+    <a href="login.html" class="btn btn-secondary" id="reg-header-login" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Log In</a>
+  </header>
+
+  <!-- Main Register Card -->
+  <main class="auth-main">
+    <div class="auth-card">
+      <div class="auth-card-top">
+        <div class="auth-logo-mark">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <line x1="19" y1="8" x2="19" y2="14"/>
+            <line x1="22" y1="11" x2="16" y2="11"/>
+          </svg>
+        </div>
+        <h1>Start Investing Free</h1>
+        <p>Zero commissions. Zero hidden fees. Start in 2 minutes.</p>
+      </div>
+
+      <!-- Benefits Strip -->
+      <div class="register-benefits">
+        <div class="reg-benefit">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Start with ₹500/mo
+        </div>
+        <div class="reg-benefit">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Zero Commission
+        </div>
+        <div class="reg-benefit">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Paperless KYC
+        </div>
+        <div class="reg-benefit">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          SEBI Regulated
+        </div>
+      </div>
+
+      <!-- Step progress -->
+      <div class="step-progress" id="reg-step-progress">
+        <div class="step-dot active" id="sdot-1">1</div>
+        <div class="step-line" id="sline-1"></div>
+        <div class="step-dot" id="sdot-2">2</div>
+        <div class="step-line" id="sline-2"></div>
+        <div class="step-dot" id="sdot-3">3</div>
+      </div>
+
+      <!-- Step 1: Personal Info -->
+      <form class="auth-form" id="register-form" novalidate>
+        <div id="reg-error" class="auth-error" style="display:none;margin-bottom:1rem;padding:0.75rem 1rem;border-radius:6px;background:#fee2e2;color:#991b1b;"></div>
+        <div id="step-1">
+          <div class="auth-form" style="gap:1.25rem;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="reg-fname">First Name</label>
+                <div class="form-input-wrapper">
+                  <input type="text" class="form-input" id="reg-fname" placeholder="Rahul" required>
+                  <svg class="form-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-lname">Last Name</label>
+                <div class="form-input-wrapper">
+                  <input type="text" class="form-input" id="reg-lname" placeholder="Sharma" required>
+                  <svg class="form-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Email Address</label>
+              <div class="form-input-wrapper">
+                <input type="email" class="form-input" id="reg-email" placeholder="you@example.com" required>
+                <svg class="form-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-phone">Mobile Number</label>
+              <div class="form-input-wrapper">
+                <input type="tel" class="form-input" id="reg-phone" placeholder="+91 98765 43210" required>
+                <svg class="form-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-password">Create Password</label>
+              <div class="form-input-wrapper">
+                <input type="password" class="form-input" id="reg-password" placeholder="Min. 8 characters" required>
+                <svg class="form-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <button type="button" class="password-toggle" id="password-toggle-reg">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </div>
+              <div class="password-strength"><div class="password-strength-bar" id="pw-strength-bar"></div></div>
+              <div class="strength-text" id="pw-strength-text"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="terms-agree">
+                <input type="checkbox" id="reg-terms" required>
+                <span>I agree to the <a href="#" class="auth-link">Terms of Service</a> and <a href="#" class="auth-link">Privacy Policy</a>. I understand mutual fund investments are subject to market risks.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-auth" id="btn-register-submit">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <line x1="19" y1="8" x2="19" y2="14"/>
+                <line x1="22" y1="11" x2="16" y2="11"/>
+              </svg>
+              Create My Free Account
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="auth-divider" style="margin: 1.5rem 0 1.25rem;">or register with</div>
+
+      <div class="social-auth-btns">
+        <button class="btn-social" id="btn-google-reg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+          Google
+        </button>
+        <button class="btn-social" id="btn-phone-reg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          Mobile OTP
+        </button>
+      </div>
+
+      <div class="auth-footer-text">
+        Already have an account?
+        <a href="login.html" class="auth-link" id="reg-goto-login" style="margin-left: 0.25rem;">Log in →</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Password strength checker
+    const pwInput = document.getElementById('reg-password');
+    const pwBar = document.getElementById('pw-strength-bar');
+    const pwText = document.getElementById('pw-strength-text');
+
+    if (pwInput) {
+      pwInput.addEventListener('input', () => {
+        const val = pwInput.value;
+        let score = 0;
+        if (val.length >= 8) score++;
+        if (/[A-Z]/.test(val)) score++;
+        if (/[0-9]/.test(val)) score++;
+        if (/[^A-Za-z0-9]/.test(val)) score++;
+
+        const colors = ['#EF4444','#F97316','#FBBF24','#10B981'];
+        const labels = ['Too weak','Fair','Good','Strong'];
+        const widths = ['25%','50%','75%','100%'];
+
+        if (val.length === 0) {
+          pwBar.style.width = '0';
+          pwText.textContent = '';
+        } else {
+          pwBar.style.width = widths[score - 1] || '25%';
+          pwBar.style.background = colors[score - 1] || '#EF4444';
+          pwText.textContent = labels[score - 1] || 'Too weak';
+          pwText.style.color = colors[score - 1] || '#EF4444';
+        }
+      });
+    }
+
+    // Password toggle
+    const pwToggle = document.getElementById('password-toggle-reg');
+    if (pwToggle && pwInput) {
+      pwToggle.addEventListener('click', () => {
+        const isHidden = pwInput.type === 'password';
+        pwInput.type = isHidden ? 'text' : 'password';
+      });
+    }
+
+    // Form submit
+    const regForm = document.getElementById('register-form');
+    if (regForm) {
+      regForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('btn-register-submit');
+        
+        const fname = document.getElementById('reg-fname').value;
+        const lname = document.getElementById('reg-lname').value;
+        const email = document.getElementById('reg-email').value;
+        const phone = document.getElementById('reg-phone').value;
+        const password = document.getElementById('reg-password').value;
+
+        btn.textContent = 'Creating your account...';
+        btn.disabled = true;
+
+        try {
+          const response = await fetch('http://localhost:3000/api/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ firstName: fname, lastName: lname, email, mobile: phone, password })
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            // Step progress animation for success
+            const sdot1 = document.getElementById('sdot-1');
+            const sdot2 = document.getElementById('sdot-2');
+            const sline1 = document.getElementById('sline-1');
+
+            sdot1.classList.add('done');
+            sdot1.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>';
+            sline1.classList.add('done');
+            sdot2.classList.add('active');
+            sdot2.textContent = '2';
+            btn.textContent = 'Setup Complete! Redirecting...';
+
+            // hide any previous error
+            const regError = document.getElementById('reg-error');
+            if (regError) regError.style.display = 'none';
+
+            setTimeout(() => {
+              window.location.href = `login.html?email=${encodeURIComponent(email)}`;
+            }, 1000);
+          } else {
+            let errorMsg = data.error || (data.errors && data.errors[0].msg) || 'Unknown error';
+            const regError = document.getElementById('reg-error');
+            if (regError) {
+              regError.textContent = 'Registration Failed: ' + errorMsg;
+              regError.style.display = 'block';
+            } else {
+              alert('Registration Failed: ' + errorMsg);
+            }
+            btn.textContent = 'Create My Free Account';
+            btn.disabled = false;
+          }
+        } catch (err) {
+          console.error(err);
+          const regError = document.getElementById('reg-error');
+          if (regError) {
+            regError.textContent = 'Failed to connect to the server.';
+            regError.style.display = 'block';
+          } else {
+            alert('Failed to connect to the server.');
+          }
+          btn.textContent = 'Create My Free Account';
+          btn.disabled = false;
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

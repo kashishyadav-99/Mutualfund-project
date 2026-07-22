@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraWealth | Smart Mutual Fund Investing Made Simple</title>
+  <meta name="description"
+    content="Invest in expert-managed mutual funds starting with just ₹500. Zero commission, paperless KYC, and direct mutual funds for high returns. SEBI Registered.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 1. Header Section -->
+  <header class="header" id="main-header">
+    <div class="container">
+      <a href="#hero" class="logo" id="header-logo">
+        <div class="logo-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        Aura<span>Wealth</span>
+      </a>
+
+      <nav class="nav-menu" id="navigation-menu">
+        <a href="#hero" class="nav-link active" id="nav-link-home">Home</a>
+        <a href="#calculator" class="nav-link" id="nav-link-calc">Calculator</a>
+        <a href="#how-it-works" class="nav-link" id="nav-link-how">How It Works</a>
+        <a href="#fund-showcase" class="nav-link" id="nav-link-funds">Funds</a>
+        <a href="#faq" class="nav-link" id="nav-link-faq">FAQ</a>
+      </nav>
+
+      <div class="header-cta" id="header-cta-block">
+        <a href="login.html" class="btn btn-secondary" id="btn-login">Login</a>
+        <a href="register.html" class="btn btn-primary" id="btn-start-investing">Start Investing</a>
+      </div>
+
+      <button class="hamburger" id="mobile-menu-toggle" aria-label="Toggle Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- 2. Hero Section -->
+  <section class="hero" id="hero">
+    <!-- Animated Spiral Lines Background -->
+    <div class="hero-spiral-container">
+      <svg class="spiral-svg" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="400" cy="400" r="120" stroke="rgba(16, 185, 129, 0.03)" stroke-width="1.5"
+          stroke-dasharray="10 10" />
+        <circle cx="400" cy="400" r="180" stroke="rgba(16, 185, 129, 0.04)" stroke-width="1.5" />
+        <circle cx="400" cy="400" r="240" stroke="rgba(16, 185, 129, 0.05)" stroke-width="1.5"
+          stroke-dasharray="25 15" />
+        <circle cx="400" cy="400" r="300" stroke="rgba(16, 185, 129, 0.06)" stroke-width="1.5" />
+        <circle cx="400" cy="400" r="360" stroke="rgba(16, 185, 129, 0.07)" stroke-width="1.5"
+          stroke-dasharray="35 25" />
+        <path d="M 400 400 C 480 320, 560 160, 400 60 C 240 -40, 40 180, 400 400" stroke="rgba(16, 185, 129, 0.06)"
+          stroke-width="2" />
+        <path d="M 400 400 C 320 480, 240 640, 400 740 C 560 840, 760 620, 400 400" stroke="rgba(16, 185, 129, 0.06)"
+          stroke-width="2" />
+        <path d="M 400 400 C 520 440, 680 480, 740 400 C 800 320, 580 120, 400 400" stroke="rgba(16, 185, 129, 0.05)"
+          stroke-width="1.5" />
+        <path d="M 400 400 C 280 360, 120 320, 60 400 C 0 480, 220 680, 400 400" stroke="rgba(16, 185, 129, 0.05)"
+          stroke-width="1.5" />
+      </svg>
+    </div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content reveal active">
+          <h1>Grow Your Wealth with <span>Smart Direct Mutual Funds</span></h1>
+          <p>Invest in India's top performing mutual funds with zero commissions, automated SIPs, and expert-guided
+            portfolios tailored to your life goals.</p>
+          <div class="hero-actions">
+            <a href="register.html" class="btn btn-primary" id="hero-cta-invest">Invest Now</a>
+            <a href="#goal-selector" class="btn btn-secondary" id="hero-cta-start-500">Start with ₹500/mo</a>
+          </div>
+          <div class="trust-strip">
+            <div class="trust-item">
+              <span class="trust-number">SEBI <span>Registered</span></span>
+              <span class="trust-label">Lic: INA000012345</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-number">5M+</span>
+              <span class="trust-label">Happy Investors</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-number">4.9★</span>
+              <span class="trust-label">App Rating (App Store)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-graphic reveal active">
+          <div class="hero-graphic-card">
+            <div class="graphic-header">
+              <div>
+                <div class="graphic-balance-lbl">My Portfolio Value</div>
+                <div class="graphic-balance-val">₹8,45,920</div>
+              </div>
+              <div class="badge badge-low-risk">+18.4% YoY</div>
+            </div>
+
+            <!-- SVG Line Graph -->
+            <div class="graphic-linechart">
+              <svg viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="portfolio-linechart-svg">
+                <defs>
+                  <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(16,185,129,0.28)" />
+                    <stop offset="100%" stop-color="rgba(16,185,129,0)" />
+                  </linearGradient>
+                </defs>
+                <line x1="0" y1="30" x2="320" y2="30" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                <line x1="0" y1="60" x2="320" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                <line x1="0" y1="90" x2="320" y2="90" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                <path d="M0 110 L40 95 L80 88 L120 75 L160 62 L200 48 L240 35 L280 22 L320 12 L320 120 L0 120 Z"
+                  fill="url(#chartFill)" />
+                <path d="M0 110 L40 95 L80 88 L120 75 L160 62 L200 48 L240 35 L280 22 L320 12" stroke="#10B981"
+                  stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="40" cy="95" r="3" fill="#10B981" opacity="0.7" />
+                <circle cx="120" cy="75" r="3" fill="#10B981" opacity="0.7" />
+                <circle cx="200" cy="48" r="3" fill="#10B981" opacity="0.7" />
+                <circle cx="280" cy="22" r="3" fill="#10B981" opacity="0.7" />
+                <circle cx="320" cy="12" r="5" fill="#10B981" />
+                <circle cx="320" cy="12" r="9" fill="rgba(16,185,129,0.2)" />
+                <text x="0" y="118" fill="rgba(148,163,184,0.7)" font-size="8" font-family="Inter,sans-serif">Jan</text>
+                <text x="75" y="118" fill="rgba(148,163,184,0.7)" font-size="8"
+                  font-family="Inter,sans-serif">Mar</text>
+                <text x="155" y="118" fill="rgba(148,163,184,0.7)" font-size="8"
+                  font-family="Inter,sans-serif">Jun</text>
+                <text x="235" y="118" fill="rgba(148,163,184,0.7)" font-size="8"
+                  font-family="Inter,sans-serif">Sep</text>
+                <text x="300" y="118" fill="rgba(148,163,184,0.7)" font-size="8"
+                  font-family="Inter,sans-serif">Now</text>
+              </svg>
+            </div>
+
+            <div class="graphic-stat-row">
+              <div class="graphic-stat">
+                <span class="graphic-stat-lbl">Invested Value</span>
+                <span class="graphic-stat-val" style="color: var(--text-white);">₹6,50,000</span>
+              </div>
+              <div class="graphic-stat">
+                <span class="graphic-stat-lbl">Total Gains</span>
+                <span class="graphic-stat-val">+₹1,95,920</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-badge fb-1">
+            <div class="fb-icon">✓</div>
+            <div class="fb-text">
+              <h4>Auto-SIP Setup</h4>
+              <p>Successful via UPI</p>
+            </div>
+          </div>
+          <div class="floating-badge fb-2">
+            <div class="fb-icon">★</div>
+            <div class="fb-text">
+              <h4>Expert Pick</h4>
+              <p>Top Performing ELSS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Age/Goal Selector Section -->
+  <section class="section" id="goal-selector">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Tailored Portfolios</span>
+        <h2 style="font-size: medium;">Select Your Financial Goal &amp; Stage of Life</h2>
+        <p>Click on your stage of life to explore expert-managed mutual fund portfolios designed for your age group.</p>
+      </div>
+    </div>
+
+    <!-- Goals Viewport Container - Full Width -->
+    <div class="goals-viewport reveal" id="goals-viewport">
+
+      <!-- Cards Selector Grid with Horizontal Scroll -->
+      <div class="age-cards-grid" id="age-cards-grid">
+
+        <!-- Rec Card 1: Top Trending -->
+        <div class="age-card age-card--rec" id="age-card-rec-trending">
+          <div class="age-card-img-overlay age-card-rec-overlay">
+            <div class="rec-badge-chip">🔥 Trending Now</div>
+            <div class="age-card-content">
+              <div>
+                <h3>Aura Nifty 50 Index</h3>
+                <div class="rec-return-chip">+22.4% <span>3Y Returns</span></div>
+              </div>
+              <p>Our #1 recommended fund for first-time investors. Low cost, broad market exposure, proven performance.
+              </p>
+            </div>
+            <span class="card-cta-arrow">View Details &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Rec Card 2: Best for Tax Saving -->
+        <div class="age-card age-card--rec" id="age-card-rec-tax">
+          <div class="age-card-img-overlay age-card-rec-overlay age-card-rec-gold">
+            <div class="rec-badge-chip rec-badge-gold">⭐ Expert Pick</div>
+            <div class="age-card-content">
+              <div>
+                <h3>Aura Tax Saver ELSS</h3>
+                <div class="rec-return-chip" style="color: var(--accent-gold);">+21.5% <span>3Y Returns</span></div>
+              </div>
+              <p>Save up to ₹46,800 in taxes annually while earning equity-level returns. Ideal under Sec 80C.</p>
+            </div>
+            <span class="card-cta-arrow" style="color: var(--accent-gold);">View Details &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Rec Card 3: New Investors -->
+        <div class="age-card age-card--rec" id="age-card-rec-new">
+          <div class="age-card-img-overlay age-card-rec-overlay age-card-rec-blue">
+            <div class="rec-badge-chip rec-badge-blue">✦ Best for Beginners</div>
+            <div class="age-card-content">
+              <div>
+                <h3>Aura Balanced Advantage</h3>
+                <div class="rec-return-chip" style="color: #60A5FA;">+14.1% <span>3Y Returns</span></div>
+              </div>
+              <p>Smart hybrid portfolio that auto-balances between equity &amp; debt, reducing volatility for new
+                investors.</p>
+            </div>
+            <span class="card-cta-arrow" style="color: #60A5FA;">View Details &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="age-card-divider">
+          <span>Stage of Life</span>
+        </div>
+
+        <!-- Card 1: Just Starting Out -->
+        <div class="age-card" data-tab="tab-starting-out" id="age-card-starting">
+          <div class="age-card-img-overlay">
+            <div class="age-card-content">
+              <div>
+                <h3>Just Starting Out</h3>
+              </div>
+              <p>Leverage the absolute power of compounding early in your career. Build smart, high-growth equity
+                habits.</p>
+            </div>
+            <span class="card-cta-arrow">Explore Funds &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="age-card" data-tab="tab-building-wealth" id="age-card-wealth">
+          <div class="age-card-img-overlay">
+            <div class="age-card-content">
+              <div>
+                <h3>Building Wealth</h3>
+              </div>
+              <p>Optimize your asset allocation. Balance high returns with cushions for family milestones and
+                properties.</p>
+            </div>
+            <span class="card-cta-arrow">Explore Funds &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="age-card" data-tab="tab-tax-retirement" id="age-card-tax">
+          <div class="age-card-img-overlay">
+            <div class="age-card-content">
+              <div>
+                <h3>Tax Saving &amp; Retirement</h3>
+              </div>
+              <p>Grow tax-free and secure your future. Maximize Sec 80C deductions while compounding long-term capital.
+              </p>
+            </div>
+            <span class="card-cta-arrow">Explore Funds &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="age-card" data-tab="tab-safe-income" id="age-card-income">
+          <div class="age-card-img-overlay">
+            <div class="age-card-content">
+              <div>
+                <h3>Safe &amp; Steady Income</h3>
+              </div>
+              <p>Preserve your capital with low-volatility assets. Generate monthly cashflows with debt and liquid
+                funds.</p>
+            </div>
+            <span class="card-cta-arrow">Explore Funds &rarr;</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Detail Subpage View -->
+      <div class="goal-detail-view" id="goal-detail-view">
+
+        <div class="back-btn-container">
+          <button class="btn-back" id="btn-back-to-goals">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
+            Back to Age Categories
+          </button>
+        </div>
+
+        <!-- Panel: Just Starting Out -->
+        <div class="goal-panel" id="tab-starting-out">
+          <div class="goal-info">
+            <h3>Kickstart Your Financial Journey</h3>
+            <p class="description">Early in your career? This is the best time to leverage the power of compounding.
+              Start small, build habits, and watch your capital grow over the long run.</p>
+            <div class="goal-features">
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Invest in high-growth small/mid-cap equity funds</span>
+              </div>
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Automated weekly/monthly SIPs from ₹500</span>
+              </div>
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Highly liquid options for quick emergencies</span>
+              </div>
+            </div>
+            <a href="#calculator" class="btn btn-outline" id="btn-explore-starting">Explore Funds</a>
+          </div>
+          <div class="goal-funds-grid">
+            <div class="fund-suggestion-card">
+              <div class="fund-card-header">
+                <span class="fund-category-tag">Equity - Large Cap</span>
+                <span class="badge badge-low-risk">Low-Med Risk</span>
+              </div>
+              <h4 class="fund-title">Aura Nifty 50 Index Fund</h4>
+              <div class="fund-metrics">
+                <div><span class="fund-metric-lbl">3Y Returns</span>
+                  <div class="fund-metric-val val-green">15.8% p.a.</div>
+                </div>
+                <div><span class="fund-metric-lbl">Min Investment</span>
+                  <div class="fund-metric-val">₹500</div>
+                </div>
+              </div>
+            </div>
+            <div class="fund-suggestion-card">
+              <div class="fund-card-header">
+                <span class="fund-category-tag">Equity - Small Cap</span>
+                <span class="badge badge-high-risk">High Risk</span>
+              </div>
+              <h4 class="fund-title">Aura Dynamic Smallcap Growth</h4>
+              <div class="fund-metrics">
+                <div><span class="fund-metric-lbl">3Y Returns</span>
+                  <div class="fund-metric-val val-green">24.2% p.a.</div>
+                </div>
+                <div><span class="fund-metric-lbl">Min Investment</span>
+                  <div class="fund-metric-val">₹500</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: Building Wealth -->
+        <div class="goal-panel" id="tab-building-wealth">
+          <div class="goal-info">
+            <h3>Accelerate Asset Accumulation</h3>
+            <p class="description">Established professionals with specific long-term milestones like buying a home,
+              children's education, or starting a business. Balanced risk-reward strategy is key.</p>
+            <div class="goal-features">
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Optimized asset allocation using Hybrid / Multi-cap funds</span>
+              </div>
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Periodic portfolio rebalancing based on market conditions</span>
+              </div>
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Goal tracking dashboards with milestone triggers</span>
+              </div>
+            </div>
+            <a href="#calculator" class="btn btn-outline" id="btn-explore-wealth">Explore Funds</a>
+          </div>
+          <div class="goal-funds-grid">
+            <div class="fund-suggestion-card">
+              <div class="fund-card-header">
+                <span class="fund-category-tag">Equity - Flexicap</span>
+                <span class="badge badge-med-risk">Medium Risk</span>
+              </div>
+              <h4 class="fund-title">Aura Focused Opportunities Fund</h4>
+              <div class="fund-metrics">
+                <div><span class="fund-metric-lbl">3Y Returns</span>
+                  <div class="fund-metric-val val-green">18.4% p.a.</div>
+                </div>
+                <div><span class="fund-metric-lbl">Min Investment</span>
+                  <div class="fund-metric-val">₹1,000</div>
+                </div>
+              </div>
+            </div>
+            <div class="fund-suggestion-card">
+              <div class="fund-card-header">
+                <span class="fund-category-tag">Hybrid - Balanced</span>
+                <span class="badge badge-low-risk">Low-Med Risk</span>
+              </div>
+              <h4 class="fund-title">Aura Balanced Advantage Fund</h4>
+              <div class="fund-metrics">
+                <div><span class="fund-metric-lbl">3Y Returns</span>
+                  <div class="fund-metric-val val-green">14.1% p.a.</div>
+                </div>
+                <div><span class="fund-metric-lbl">Min Investment</span>
+                  <div class="fund-metric-val">₹1,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: Tax & Retirement -->
+        <div class="goal-panel" id="tab-tax-retirement">
+          <div class="goal-info">
+            <h3>Save Tax Under Sec 80C &amp; Secure Retirement</h3>
+            <p class="description">Grow your money tax-free while building a corpus for your golden years. Maximize
+              tax deductions while compounding equity returns.</p>
+            <div class="goal-features">
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Save up to ₹46,800 in taxes annually with ELSS</span>
+              </div>
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Shortest lock-in period (3 years) among Sec 80C options</span>
+              </div>
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Dedicated Retirement portfolios with automated SWP later</span>
+              </div>
+            </div>
+            <a href="#calculator" class="btn btn-outline" id="btn-explore-tax">Explore Funds</a>
+          </div>
+          <div class="goal-funds-grid">
+            <div class="fund-suggestion-card">
+              <div class="fund-card-header">
+                <span class="fund-category-tag">Equity - ELSS (Tax)</span>
+                <span class="badge badge-med-risk">Medium Risk</span>
+              </div>
+              <h4 class="fund-title">Aura Tax Saver ELSS Fund</h4>
+              <div class="fund-metrics">
+                <div><span class="fund-metric-lbl">3Y Returns</span>
+                  <div class="fund-metric-val val-green">21.5% p.a.</div>
+                </div>
+                <div><span class="fund-metric-lbl">Min Investment</span>
+                  <div class="fund-metric-val">₹500</div>
+                </div>
+              </div>
+            </div>
+            <div class="fund-suggestion-card">
+              <div class="fund-card-header">
+                <span class="fund-category-tag">Retirement Growth</span>
+                <span class="badge badge-med-risk">Medium Risk</span>
+              </div>
+              <h4 class="fund-title">Aura Retire-Smart Equity Fund</h4>
+              <div class="fund-metrics">
+                <div><span class="fund-metric-lbl">3Y Returns</span>
+                  <div class="fund-metric-val val-green">17.2% p.a.</div>
+                </div>
+                <div><span class="fund-metric-lbl">Min Investment</span>
+                  <div class="fund-metric-val">₹1,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: Safe & Steady -->
+        <div class="goal-panel" id="tab-safe-income">
+          <div class="goal-info">
+            <h3>Steady Income &amp; Capital Preservation</h3>
+            <p class="description">Minimize risk and generate a consistent, predictable income stream. Excellent
+              choice for retirees or parking short-term corporate capital safely.</p>
+            <div class="goal-features">
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Ultra-safe investments in AAA-rated corporate debt &amp; G-Secs</span>
+              </div>
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Monthly payouts through Systematic Withdrawal Plan (SWP)</span>
+              </div>
+              <div class="goal-feature-item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>Instant redemption access for liquid investments</span>
+              </div>
+            </div>
+            <a href="#calculator" class="btn btn-outline" id="btn-explore-income">Explore Funds</a>
+          </div>
+          <div class="goal-funds-grid">
+            <div class="fund-suggestion-card">
+              <div class="fund-card-header">
+                <span class="fund-category-tag">Debt - G-Sec</span>
+                <span class="badge badge-low-risk">Very Low Risk</span>
+              </div>
+              <h4 class="fund-title">Aura Government Securities Fund</h4>
+              <div class="fund-metrics">
+                <div><span class="fund-metric-lbl">3Y Returns</span>
+                  <div class="fund-metric-val val-green">7.8% p.a.</div>
+                </div>
+                <div><span class="fund-metric-lbl">Min Investment</span>
+                  <div class="fund-metric-val">₹5,000</div>
+                </div>
+              </div>
+            </div>
+            <div class="fund-suggestion-card">
+              <div class="fund-card-header">
+                <span class="fund-category-tag">Debt - Liquid</span>
+                <span class="badge badge-low-risk">Very Low Risk</span>
+              </div>
+              <h4 class="fund-title">Aura Liquid Cash Reserve Fund</h4>
+              <div class="fund-metrics">
+                <div><span class="fund-metric-lbl">3Y Returns</span>
+                  <div class="fund-metric-val val-green">6.9% p.a.</div>
+                </div>
+                <div><span class="fund-metric-lbl">Min Investment</span>
+                  <div class="fund-metric-val">₹1,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <section class="section why-choose-us-section" id="why-choose-us">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Our Edge</span>
+        <h2>Why Investors Choose AuraWealth</h2>
+        <p>We blend cutting-edge technology with high-standard security to deliver a unmatched wealth management
+          experience.</p>
+      </div>
+      <div class="usps-grid">
+        <div class="usp-card reveal">
+          <div class="usp-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg></div>
+          <h3>Zero Commissions</h3>
+          <p>Invest exclusively in Direct Plan mutual funds. Save up to 1.5% in hidden fees annually and add lakhs to
+            your terminal portfolio.</p>
+        </div>
+        <div class="usp-card reveal">
+          <div class="usp-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg></div>
+          <h3>Paperless KYC</h3>
+          <p>Complete your identity check digitally in under 2 minutes. No forms, no office visits, no physical
+            signatures. Start investing instantly.</p>
+        </div>
+        <div class="usp-card reveal">
+          <div class="usp-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg></div>
+          <h3>Expert-Managed</h3>
+          <p>Portfolios crafted and adjusted continuously by certified financial planners and algorithms to manage
+            volatility and maximize growth.</p>
+        </div>
+        <div class="usp-card reveal">
+          <div class="usp-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg></div>
+          <h3>Bank-Grade Security</h3>
+          <p>Protected with AES-256 encryption. Your funds go directly through secure clearing channels to registered
+            Asset Management Companies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SIP/Goal Calculator Section -->
+  <section class="section" id="calculator">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Wealth Projection</span>
+        <h2>Calculate Your Compounding Power</h2>
+        <p>Adjust the values below to see how much your monthly or one-time investments can grow over time.</p>
+      </div>
+      <div class="calc-container reveal">
+        <div class="calc-box">
+          <div class="calc-toggle">
+            <button class="calc-toggle-btn active" data-mode="sip" id="calc-toggle-sip">Monthly SIP</button>
+            <button class="calc-toggle-btn" data-mode="lumpsum" id="calc-toggle-lumpsum">One-Time Lumpsum</button>
+          </div>
+          <div class="calc-slider-group">
+            <div class="slider-header">
+              <label for="calc-amount" class="slider-label">Monthly Investment</label>
+              <div class="slider-val-box" id="amount-val">₹5,000</div>
+            </div>
+            <input type="range" class="range-slider" id="calc-amount" min="500" max="100000" step="500" value="5000">
+          </div>
+          <div class="calc-slider-group">
+            <div class="slider-header">
+              <label for="calc-duration" class="slider-label">Investment Period</label>
+              <div class="slider-val-box" id="duration-val">10 Yrs</div>
+            </div>
+            <input type="range" class="range-slider" id="calc-duration" min="1" max="40" step="1" value="10">
+          </div>
+          <div class="calc-slider-group">
+            <div class="slider-header">
+              <label for="calc-return" class="slider-label">Expected Return Rate</label>
+              <div class="slider-val-box" id="return-val">12%</div>
+            </div>
+            <input type="range" class="range-slider" id="calc-return" min="1" max="30" step="0.5" value="12">
+          </div>
+        </div>
+        <div class="calc-results">
+          <div class="pie-chart-wrapper">
+            <div class="pie-chart-container">
+              <div class="pie-chart-glow"></div>
+              <svg class="donut-chart" viewBox="0 0 36 36" id="donut-svg">
+                <circle class="donut-ring" cx="18" cy="18" r="15.91549" fill="transparent" stroke="var(--navy-light)"
+                  stroke-width="3"></circle>
+                <circle class="donut-segment segment-invested" id="chart-invested" cx="18" cy="18" r="15.91549"
+                  fill="transparent" stroke="var(--accent-emerald)" stroke-width="3.2" stroke-dasharray="50 50"
+                  stroke-dashoffset="25"></circle>
+                <circle class="donut-segment segment-returns" id="chart-returns" cx="18" cy="18" r="15.91549"
+                  fill="transparent" stroke="var(--accent-gold)" stroke-width="3.2" stroke-dasharray="50 50"
+                  stroke-dashoffset="75"></circle>
+              </svg>
+              <div class="donut-text">
+                <span class="donut-total-lbl">Total Value</span>
+                <span class="donut-total-val" id="donut-total-value">₹11,61,695</span>
+              </div>
+            </div>
+            <div class="pie-chart-legend">
+              <div class="legend-item">
+                <span class="legend-color color-invested"></span>
+                <span class="legend-text">Invested<br><strong id="legend-invested-val">₹6,00,000</strong></span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color color-returns"></span>
+                <span class="legend-text">Est. Returns<br><strong id="legend-returns-val"
+                    style="color: var(--accent-gold);">₹5,61,695</strong></span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 1rem;">
+            <a href="#how-it-works" class="btn btn-primary" style="width: 100%;" id="calc-cta-invest">Invest This Amount
+              Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. How It Works Section -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Onboarding Flow</span>
+        <h2>4 Easy Steps to Start Investing</h2>
+        <p>Get up and running in minutes. Simple, digital, and streamlined from start to finish.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num-box">01</div>
+          <h3>Sign Up &amp; KYC</h3>
+          <p>Create your profile with basic details, PAN card, and verify identity securely online.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num-box">02</div>
+          <h3>Select Fund or Goal</h3>
+          <p>Pick dynamic funds suggested by your stage selector, or custom-select specific options.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num-box">03</div>
+          <h3>Invest via SIP/Lump sum</h3>
+          <p>Set automated weekly/monthly recurring deposits or start with an instant one-time payment.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num-box">04</div>
+          <h3>Track &amp; Withdraw</h3>
+          <p>Watch your corpus grow daily via real-time charts and withdraw partial or full amounts anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Fund Categories Showcase Section -->
+  <section class="section fund-showcase-section" id="fund-showcase">
+    <!-- Elegant Lines Background -->
+    <div class="fund-lines-bg" aria-hidden="true">
+      <svg viewBox="0 0 1200 700" fill="none" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="100" x2="1200" y2="100" stroke="rgba(16,185,129,0.04)" stroke-width="1" />
+        <line x1="0" y1="250" x2="1200" y2="250" stroke="rgba(16,185,129,0.03)" stroke-width="1" />
+        <line x1="0" y1="400" x2="1200" y2="400" stroke="rgba(16,185,129,0.04)" stroke-width="1" />
+        <line x1="0" y1="550" x2="1200" y2="550" stroke="rgba(16,185,129,0.03)" stroke-width="1" />
+        <line x1="150" y1="0" x2="150" y2="700" stroke="rgba(255,255,255,0.018)" stroke-width="1" />
+        <line x1="400" y1="0" x2="400" y2="700" stroke="rgba(255,255,255,0.015)" stroke-width="1" />
+        <line x1="700" y1="0" x2="700" y2="700" stroke="rgba(255,255,255,0.018)" stroke-width="1" />
+        <line x1="1000" y1="0" x2="1000" y2="700" stroke="rgba(255,255,255,0.015)" stroke-width="1" />
+        <line x1="0" y1="0" x2="500" y2="700" stroke="rgba(16,185,129,0.025)" stroke-width="1" />
+        <line x1="500" y1="0" x2="1100" y2="700" stroke="rgba(16,185,129,0.02)" stroke-width="1" />
+        <line x1="800" y1="0" x2="1200" y2="400" stroke="rgba(16,185,129,0.02)" stroke-width="1" />
+      </svg>
+    </div>
+    <div class="ambient-glow-pink"></div>
+
+    <div class="container" style="position:relative; z-index:2;">
+      <div class="section-header reveal">
+        <span class="subtitle">Explore Categories</span>
+        <h2>Diverse Fund Classes for All Strategies</h2>
+        <p>Scroll through our core market divisions — optimized across equity styles, tax benefits, and risk appetite.
+        </p>
+      </div>
+
+      <!-- Horizontal Scroll Fund Cards — one row, scrollable like goal selector -->
+      <div class="funds-viewport reveal" id="funds-viewport">
+        <div class="funds-cards-row" id="funds-cards-row">
+
+          <!-- LARGE CAP -->
+          <div class="fund-card-chip" id="fchip-largecap">
+            <div class="fchip-top">
+              <div class="fchip-icon fchip-icon-blue">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="3" />
+                  <path d="M9 17V10M12 17V7M15 17v-5" />
+                </svg>
+              </div>
+              <span class="fchip-cap-label">LARGE CAP</span>
+            </div>
+            <h3 class="fchip-name">Blue Chip Equity</h3>
+            <p class="fchip-desc">Top 100 companies by market cap. Stable, battle-tested for long-term wealth creation.
+            </p>
+            <div class="fchip-return">
+              <span class="fchip-return-val">+16.8%</span>
+              <span class="fchip-return-lbl">3Y Returns p.a.</span>
+            </div>
+            <div class="fchip-risk-row">
+              <span class="fchip-risk-lbl">Risk</span>
+              <div class="fchip-risk-track">
+                <div class="fchip-risk-fill" style="width:35%; background: var(--accent-emerald);"></div>
+              </div>
+              <span class="fchip-risk-text" style="color: var(--accent-emerald);">Low-Med</span>
+            </div>
+            <div class="fchip-tags">
+              <span class="fchip-tag">Nifty 50</span>
+              <span class="fchip-tag">Sensex</span>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: auto; width: 100%;">
+              <a href="https://large-cap.netlify.app/" target="_blank" class="btn btn-outline fchip-btn"
+                style="margin-top: 0; padding: 0.65rem 0.5rem; flex: 1;">Invest Now →</a>
+            </div>
+
+            <!-- <a href="register.html" class="btn btn-outline fchip-btn">Invest Now →</a> -->
+          </div>
+
+          <!-- MID CAP -->
+          <div class="fund-card-chip" id="fchip-midcap">
+            <div class="fchip-top">
+              <div class="fchip-icon fchip-icon-gold">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                  <polyline points="17 6 23 6 23 12" />
+                </svg>
+              </div>
+              <span class="fchip-cap-label fchip-cap-gold">MID CAP</span>
+            </div>
+            <h3 class="fchip-name">Growth Engine</h3>
+            <p class="fchip-desc">Ranks 101–250 by market cap. Higher growth potential with manageable risk for 5+ yr.
+            </p>
+            <div class="fchip-return">
+              <span class="fchip-return-val" style="color: var(--accent-gold);">+21.3%</span>
+              <span class="fchip-return-lbl">3Y Returns p.a.</span>
+            </div>
+            <div class="fchip-risk-row">
+              <span class="fchip-risk-lbl">Risk</span>
+              <div class="fchip-risk-track">
+                <div class="fchip-risk-fill" style="width:55%; background: var(--accent-gold);"></div>
+              </div>
+              <span class="fchip-risk-text" style="color: var(--accent-gold);">Medium</span>
+            </div>
+            <div class="fchip-tags">
+              <span class="fchip-tag">Midcap 150</span>
+              <span class="fchip-tag">5+ Yrs</span>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: auto; width: 100%;">
+
+              <a href="https://mid-capp.netlify.app/" target="_blank" class="btn btn-outline fchip-btn"
+                style="margin-top: 0; padding: 0.65rem 0.5rem; flex: 1;">Invest Now →</a>
+            </div>
+
+            <!-- <a href="register.html" class="btn btn-outline fchip-btn fchip-btn-gold">Invest Now →</a> -->
+          </div>
+
+          <!-- SMALL CAP -->
+          <div class="fund-card-chip" id="fchip-smallcap">
+            <div class="fchip-top">
+              <div class="fchip-icon fchip-icon-red">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <span class="fchip-cap-label fchip-cap-red">SMALL CAP</span>
+            </div>
+            <h3 class="fchip-name">Alpha Hunters</h3>
+            <p class="fchip-desc">Beyond rank 250. Explosive multi-bagger potential for aggressive 7+ yr investors.</p>
+            <div class="fchip-return">
+              <span class="fchip-return-val" style="color:#EF4444;">+28.7%</span>
+              <span class="fchip-return-lbl">3Y Returns p.a.</span>
+            </div>
+            <div class="fchip-risk-row">
+              <span class="fchip-risk-lbl">Risk</span>
+              <div class="fchip-risk-track">
+                <div class="fchip-risk-fill" style="width:85%; background:#EF4444;"></div>
+              </div>
+              <span class="fchip-risk-text" style="color:#EF4444;">High</span>
+            </div>
+            <div class="fchip-tags">
+              <span class="fchip-tag">High Alpha</span>
+              <span class="fchip-tag">7+ Yrs</span>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: auto; width: 100%;">
+
+              <a href="https://small-cap-mutual-fund.netlify.app/" target="_blank" class="btn btn-outline fchip-btn"
+                style="margin-top: 0; padding: 0.65rem 0.5rem; flex: 1;">Invest Now →</a>
+            </div>
+          </div>
+
+          <!-- FLEXI CAP -->
+          <div class="fund-card-chip" id="fchip-flexicap">
+            <div class="fchip-top">
+              <div class="fchip-icon fchip-icon-purple">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <span class="fchip-cap-label fchip-cap-purple">FLEXI CAP</span>
+            </div>
+            <h3 class="fchip-name">All-Weather Fund</h3>
+            <p class="fchip-desc">Dynamic mix of large, mid &amp; small caps. Adjusts allocation with market conditions.
+            </p>
+            <div class="fchip-return">
+              <span class="fchip-return-val" style="color:#A78BFA;">+19.4%</span>
+              <span class="fchip-return-lbl">3Y Returns p.a.</span>
+            </div>
+            <div class="fchip-risk-row">
+              <span class="fchip-risk-lbl">Risk</span>
+              <div class="fchip-risk-track">
+                <div class="fchip-risk-fill" style="width:50%; background:#A78BFA;"></div>
+              </div>
+              <span class="fchip-risk-text" style="color:#A78BFA;">Med-High</span>
+            </div>
+            <div class="fchip-tags">
+              <span class="fchip-tag">All Caps</span>
+              <span class="fchip-tag">Dynamic</span>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: auto; width: 100%;">
+
+              <a href="https://flexicap.netlify.app" class="btn btn-outline fchip-btn fchip-btn-purple" target="_blank"
+                rel="noopener noreferrer" style="margin-top: 0; padding: 0.65rem 0.5rem; flex: 1;">Invest Now →</a>
+            </div>
+            <!-- <a href="register.html" class="btn btn-outline fchip-btn fchip-btn-purple">Invest Now →</a> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Trust & Security Band -->
+  <section class="security-band" id="trust-band">
+    <div class="container">
+      <div class="security-flex reveal">
+        <div class="security-message">
+          <div class="sec-icon-shield">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <div class="sec-text">
+            <h3>Registered &amp; Insured</h3>
+            <p>Regulated by SEBI &amp; AMFI. All data uses AES-256 TLS 1.3 encryption protocols.</p>
+          </div>
+        </div>
+        <div class="security-logos">
+          <div class="sec-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 12h8M12 8v8" />
+            </svg>SEBI Regulated</div>
+          <div class="sec-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 12h8M12 8v8" />
+            </svg>AMFI Partner</div>
+          <div class="sec-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 12h8M12 8v8" />
+            </svg>ISO 27001 Secure</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FAQ Section -->
+  <section class="section faq-section" id="faq">
+    <div class="faq-lines-bg" aria-hidden="true">
+      <svg viewBox="0 0 1200 600" fill="none" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="80" x2="1200" y2="80" stroke="rgba(16,185,129,0.035)" stroke-width="1" />
+        <line x1="0" y1="200" x2="1200" y2="200" stroke="rgba(16,185,129,0.025)" stroke-width="1" />
+        <line x1="0" y1="320" x2="1200" y2="320" stroke="rgba(16,185,129,0.035)" stroke-width="1" />
+        <line x1="0" y1="440" x2="1200" y2="440" stroke="rgba(16,185,129,0.025)" stroke-width="1" />
+        <line x1="0" y1="560" x2="1200" y2="560" stroke="rgba(16,185,129,0.02)" stroke-width="1" />
+        <line x1="0" y1="0" x2="600" y2="600" stroke="rgba(16,185,129,0.02)" stroke-width="1" />
+        <line x1="200" y1="0" x2="900" y2="600" stroke="rgba(16,185,129,0.015)" stroke-width="1" />
+        <line x1="600" y1="0" x2="1200" y2="400" stroke="rgba(16,185,129,0.015)" stroke-width="1" />
+      </svg>
+    </div>
+    <div class="faq-circle-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Got Questions?</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Learn more about how mutual fund investments operate and how we safeguard your hard-earned assets.</p>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>Are mutual funds on AuraWealth safe?</h3>
+            <div class="faq-toggle-icon">+</div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes, absolutely. AuraWealth is a SEBI registered investment adviser. Your
+              money goes directly from your bank account to the clearing house of AMFI / Asset Management Companies, not
+              through AuraWealth's corporate bank accounts. Even in the highly unlikely event that AuraWealth ceases
+              operations, your units are held securely in your name in the central depositories (CDSL/NSDL) and can be
+              accessed easily from any other distributor or direct portal.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>What is the minimum amount required to start investing?</h3>
+            <div class="faq-toggle-icon">+</div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">You can start investing with as little as ₹500 per month using our Systematic
+              Investment Plan (SIP). For one-time (lumpsum) investments, the minimum amount varies by fund category,
+              typically starting from ₹1,000 or ₹5,000.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>How do I withdraw my mutual fund investments?</h3>
+            <div class="faq-toggle-icon">+</div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Withdrawal is highly straightforward. Log in to your dashboard, select the
+              fund you wish to redeem, and click "Withdraw". The money will be credited directly to your registered bank
+              account. Debt and Liquid funds are typically credited in 1 business day, whereas equity funds take 2 to 3
+              business days.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>Are there any hidden costs or account maintenance fees?</h3>
+            <div class="faq-toggle-icon">+</div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">AuraWealth charges zero subscription fees, zero platform fees, and zero
+              commissions. We only distribute Direct Plan mutual funds, which have lower expense ratios compared to
+              Regular plans distributed by agents. The only costs are standard fund management charges (Expense Ratio)
+              levied by the AMC itself.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <h3>What are the tax implications on mutual fund returns?</h3>
+            <div class="faq-toggle-icon">+</div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Taxation depends on the type of fund and holding period. Equity fund gains
+              held for more than 1 year (Long-term Capital Gains or LTCG) are taxed at 10% on gains exceeding ₹1 Lakh in
+              a financial year. Gains held for less than 1 year (STCG) are taxed at 15%. Debt fund gains are added to
+              your income tax slab rates regardless of holding period.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Final CTA Section -->
+  <section class="section final-cta" id="final-cta" style="position:relative;z-index:3;">
+    <div class="container">
+      <div class="final-cta-card reveal">
+        <h2>Start Building Your Wealth Today</h2>
+        <p>Create an account in 2 minutes, configure your automated bank mandates, and start your path toward financial
+          independence.</p>
+        <div class="cta-app-badges">
+          <a href="#playstore" class="store-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 5.25V18.75L17.25 12L3 5.25Z" />
+              <path d="M17.25 12L19.5 9.75V14.25L17.25 12Z" />
+            </svg>
+            <div class="store-badge-text"><span>Get it on</span><strong>Google Play</strong></div>
+          </a>
+          <a href="#appstore" class="store-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.71,19.5C17.88,20.74,17,21.95,15.66,22c-1.31,0-1.72-.8-3.22-.8s-2,.78-3.25.82C7.89,22.06,7,20.85,6.17,19.66,4.47,17.2,3.17,12.67,4.92,9.63c.87-1.51,2.42-2.47,4.12-2.5,1.29,0,2.5.9,3.3,1,.79-.1,2.27-1.12,3.8-1a4.9,4.9,0,0,1,3.84,2.09,4.8,4.8,0,0,0-2.3,4,4.78,4.78,0,0,0,2.88,4.35A11.75,11.75,0,0,1,18.71,19.5ZM16,3.75A4.57,4.57,0,0,0,17.13.56a4.59,4.59,0,0,0-3,1.57A4.27,4.27,0,0,0,13,5.43,4.77,4.77,0,0,0,16,3.75Z" />
+            </svg>
+            <div class="store-badge-text"><span>Download on the</span><strong>App Store</strong></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Footer Section -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="logo" style="margin-bottom: 1.25rem;">
+            <div class="logo-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            Aura<span>Wealth</span>
+          </a>
+          <p>India's premium wealth management portal. Empowering investors to secure their financial goals with
+            automated intelligence and minimal friction.</p>
+          <div class="social-links">
+            <a href="#facebook" class="social-icon" aria-label="Facebook">F</a>
+            <a href="#twitter" class="social-icon" aria-label="Twitter">T</a>
+            <a href="#linkedin" class="social-icon" aria-label="LinkedIn">In</a>
+            <a href="#instagram" class="social-icon" aria-label="Instagram">Ig</a>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Invest Solutions</h4>
+          <ul>
+            <li><a href="#goal-selector">Equity mutual funds</a></li>
+            <li><a href="#goal-selector">Debt mutual funds</a></li>
+            <li><a href="#goal-selector">Hybrid mutual funds</a></li>
+            <li><a href="#goal-selector">ELSS Tax Saver</a></li>
+            <li><a href="#goal-selector">Liquid Funds</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#blog">Research Blog</a></li>
+            <li><a href="#press">Press Room</a></li>
+            <li><a href="#trust-band">Security Measures</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Legal &amp; Contact</h4>
+          <ul>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+            <li><a href="#disclaimer">Risk Disclosures</a></li>
+            <li><a href="#support">Customer Support</a></li>
+            <li><a href="#grievance">Grievance Redressal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <p><strong>Mutual Fund investments are subject to market risks, read all scheme related documents
+            carefully.</strong> The past performance of mutual funds is not necessarily indicative of future performance
+          of the schemes. AuraWealth Technologies Private Limited (AuraWealth) is a registered Investment Adviser under
+          SEBI registration no. INA000012345.</p>
+        <p>Registered Office: Ground Floor, Block A, Prestige Tech Park, Outer Ring Road, Bangalore, Karnataka - 560103.
+          CIN: U67190KA2026PTC123456.</p>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">&copy; 2026 AuraWealth Technologies Pvt. Ltd. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

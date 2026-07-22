@@ -1,0 +1,133 @@
+{
+  "users": [
+    {
+      "id": "1783626135278",
+      "firstName": "sayli",
+      "lastName": "salvi",
+      "email": "saylisalvi20@gmail.com",
+      "mobile": "9594526279",
+      "password": "$2b$10$i8TpoSCOpmKBEBQFNEWeMepjhNRFtYAhQflKT/GQxQH9xRVRgIs4G",
+      "createdAt": "2026-07-09T19:42:15.278Z"
+    },
+    {
+      "id": "1783742271280",
+      "firstName": "shuubhamm",
+      "lastName": "yadav",
+      "email": "shubhamyadav19476@gmail.com",
+      "mobile": "9029894689",
+      "password": "$2b$10$qo.6u7DeErpGtucHOaJel.fc1EhDrY//4CrkpvlGUUQH.qXk/0cB.",
+      "createdAt": "2026-07-11T03:57:51.280Z"
+    },
+    {
+      "id": "1783742376929",
+      "firstName": "shuubham",
+      "lastName": "yadav",
+      "email": "shubhamyadav176@gmail.com",
+      "mobile": "9029894689",
+      "password": "$2b$10$04/rE7WHaM5YpbLWkjubDu1PwtuhjD9stZmoi8Q7WwkKChF3loMpC",
+      "createdAt": "2026-07-11T03:59:36.929Z"
+    },
+    {
+      "id": "1783748028088",
+      "firstName": "anjali",
+      "lastName": "mali",
+      "email": "anjumail1526@gmali.com",
+      "mobile": "9373639475",
+      "password": "$2b$10$BSv4E/K416OT9iNfgCDIB.N40KcjXGB3OAF0aRfobFxsuogMEVRKO",
+      "createdAt": "2026-07-11T05:33:48.088Z"
+    },
+    {
+      "id": "1783748341107",
+      "firstName": "krishna",
+      "lastName": "jadhav",
+      "email": "keishnajadhav34@gamil.com",
+      "mobile": "8591083619",
+      "password": "$2b$10$Xbm3WVN0/byitVyCNIPIHulMemyRtl0fyIKQ1yK0jsTOJ1b3IGtau",
+      "createdAt": "2026-07-11T05:39:01.107Z"
+    },
+    {
+      "id": "1783749303589",
+      "firstName": "pragati",
+      "lastName": "igawe",
+      "email": "pragatiigawe@gmail.com",
+      "mobile": "8591560549",
+      "password": "$2b$10$5lZr2NTaThPjLh/eS8rcduBufN7myWGHLHjMxotZR7YLYxwJvvXLm",
+      "createdAt": "2026-07-11T05:55:03.589Z"
+    },
+    {
+      "id": "1783749393573",
+      "firstName": "pragati",
+      "lastName": "igawe",
+      "email": "pragatiigaw@gmail.com",
+      "mobile": "8591560549",
+      "password": "$2b$10$EfQ2snkIRApXKabeYW11h.wHhcDKYbvJ1BH1xH2bKOHC7g1J9ksXW",
+      "createdAt": "2026-07-11T05:56:33.573Z"
+    },
+    {
+      "id": "1783749529576",
+      "firstName": "khushi",
+      "lastName": "kurmi",
+      "email": "khushikurmi30@gmail.com",
+      "mobile": "9004205706",
+      "password": "$2b$10$Akuh/D2ZaFPUrdXHngi/uOEnHnOmbE408lWvSWCn67ZfgtNGHxAoq",
+      "createdAt": "2026-07-11T05:58:49.576Z"
+    },
+    {
+      "id": "1783749653157",
+      "firstName": "rutuja",
+      "lastName": "swant",
+      "email": "rutujaswantrs61@gmail.com",
+      "mobile": "8850146586",
+      "password": "$2b$10$X0Utw51U9a/Khiji45BYL.t.62Iuw3UEjiFEbPNwKVKPklnGLNUrG",
+      "createdAt": "2026-07-11T06:00:53.157Z"
+    },
+    {
+      "id": "1783750103156",
+      "firstName": "vaibhav",
+      "lastName": "desai",
+      "email": "dvaibhav578@gmail.com",
+      "mobile": "7796689879",
+      "password": "$2b$10$YY2nu0AErG9tSc9p.0nGl.UHPQ.j.xcPMml6i7SYgoDxDCWjqcckm",
+      "createdAt": "2026-07-11T06:08:23.156Z"
+    },
+    {
+      "id": "1783752478095",
+      "firstName": "Krish",
+      "lastName": "Shinde",
+      "email": "shindekrish990@gmail.com",
+      "mobile": "9975349505",
+      "password": "$2b$10$8g2hyXYE1iVZYkCFK3oWp.umwBME0AuYmY0PcF/VEoar32BW8RNRG",
+      "createdAt": "2026-07-11T06:47:58.095Z"
+    },
+    {
+      "id": "1783928822838",
+      "firstName": "pavan",
+      "lastName": "ghadi",
+      "email": "pavanghadigaonkar915@gmail.com",
+      "mobile": "9834694248",
+      "password": "$2b$10$5lEwhwPqHAd4God0T75qsugNexJV05ZZS3PahSD6LjXRAVw6Plswm",
+      "createdAt": "2026-07-13T07:47:02.838Z"
+    },
+    {
+      "id": "1784705472305",
+      "firstName": "Kashish",
+      "lastName": "Yadav",
+      "email": "kashishyadav6768@gmail.com",
+      "mobile": "8291818710",
+      "password": "$2b$10$KF8WLx.X2wDEmPFCcViV8u8ggBbh2TfRAlInDP50zpvnwTZcw.XFi",
+      "createdAt": "2026-07-22T07:31:12.305Z"
+    }
+  ],
+  "admin": [
+    {
+      "id": "1",
+      "username": "admin1",
+      "password": "password1"
+    },
+    {
+      "id": "2",
+      "username": "admin2",
+      "password": "password2"
+    }
+  ]
+}
